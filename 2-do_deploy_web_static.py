@@ -2,8 +2,9 @@
 from fabric import task
 from os.path import exists
 from fabric import Connection
+import os
 
-env.hosts = ['<54.237.49.126>', '<54.87.207.255>']
+env.hosts = ['<34.207.63.212>', '<54.87.207.255>']
 env.user = 'kathy2470'  # Update with your username
 env.key_filename = '/home/kathy2470/.ssh/id_rsa'  # Update with the path to your SSH private key
 

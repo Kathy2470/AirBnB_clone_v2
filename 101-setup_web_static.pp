@@ -18,13 +18,21 @@ file { '/data/web_static/shared':
   group  => 'root',
 }
 
+# Ensure releases/test directory exists
+file { '/data/web_static/releases/test':
+  ensure => 'directory',
+  owner  => 'root',
+  group  => 'root',
+  require => File['/data/web_static/releases'],
+}
+
 # Ensure symbolic link to current exists and points to releases/test
 file { '/data/web_static/current':
   ensure  => 'link',
   owner   => 'root',
   group   => 'root',
   target  => '/data/web_static/releases/test',
-  require => File['/data/web_static/releases'],
+  require => File['/data/web_static/releases/test'],
 }
 
 # Create index.html inside releases/test

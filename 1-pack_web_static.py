@@ -5,6 +5,7 @@ folder of your AirBnB Clone repo
 """
 from fabric.api import task
 from datetime import datetime
+import os
 
 env.hosts = ['54.237.49.126']
 
